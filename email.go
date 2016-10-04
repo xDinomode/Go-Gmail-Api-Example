@@ -60,7 +60,7 @@ func main() {
 			"Message body goes here!")
 
 	// Place messageStr into message.Raw in base64 encoded format
-	message.Raw = base64.StdEncoding.EncodeToString(messageStr)
+	message.Raw = base64.URLEncoding.EncodeToString(messageStr)
 
 	// Send the message
 	_, err = gmailService.Users.Messages.Send("me", &message).Do()
